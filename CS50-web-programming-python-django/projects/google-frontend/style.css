@@ -1,0 +1,119 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.topnav {
+  overflow: hidden;
+}
+.topnav a {
+  color: black;
+  float: right;
+  font-size: 14px;
+  padding: 8px 8px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.main {
+  display: table;
+  height: 90%;
+  width: 100%;
+}
+
+.wrapper {
+  display: table-cell;
+  height: 100%;
+  vertical-align: middle;
+  text-align: center;
+}
+.wrapper .logo {
+  display: block;
+  margin-bottom: 1%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.wrapper .search {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.wrapper .search input {
+  border: 1px solid #afafaf;
+  border-radius: 25px;
+  height:100%;
+  padding: 1%;
+  width:100%;
+}
+.wrapper .search input:hover{
+  box-shadow: 0 0 1pt 1pt lightgrey;
+  outline: none;
+}
+.wrapper .search input:focus{
+  box-shadow: 0 0 1pt 1pt lightgrey;
+  outline: none;
+}
+
+.wrapper .button {
+  display: inline-block;
+  border: none;
+  padding: 1%;
+  border-radius: 5px;
+  margin-left: auto;
+  margin-top: 1%;
+  margin-right: auto;
+  padding: 1%;
+}
+
+.appbar {
+  border-bottom: solid #f3f3f3;
+}
+.appbar label {
+  color: #d93025;
+  font-family: arial,sans-serif;
+  font-size: 20px;
+  margin-bottom: 5%;
+  margin-left: 5%;
+  margin-top: 5%;
+}
+
+.adv-search-container {
+  font-family: Arial;
+  margin: auto;
+  padding-top: 5%;
+  width: 90%;
+}
+.adv-search-container p {
+  display: inline-block;
+  font-size: 18px;
+}
+.adv-search-container .form-q {
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+.adv-search-container .form-q label {
+  font-size: 14px;
+  width: 15%;
+}
+.adv-search-container .form-q input {
+  padding: 2px 0;
+  width: 50%;
+}
+.adv-search-container .adv-button {
+  background-color: #4d90fe;
+  border: 1px solid #3079ed;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  height: 30px;
+  margin-top: 5%;
+  min-width: 120px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-align: center;
+}
