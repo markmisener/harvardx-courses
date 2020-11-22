@@ -20,7 +20,7 @@ def index(request):
 def search(request):
     query = request.GET.get("q", "")
     if util.get_entry(query):
-        return HttpResponseRedirect(reverse("entry", kwargs={"title": query}))
+        return HttpResponseRedirect(reverse("display_entry", kwargs={"title": query}))
     else:
         matches = []
         entries = util.list_entries()
