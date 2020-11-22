@@ -17,6 +17,22 @@ def index(request):
     return render(request, "encyclopedia/index.html", {"entries": util.list_entries()})
 
 
+def search(request):
+    query = request.GET.get("q", "")
+    if util.get_entry(query):
+        return HttpResponseRedirect(reverse("entry", kwargs={"title": query}))
+    else:
+        matches = []
+        entries = util.list_entries()
+        for entry in entries:
+            if query.lower() in entry.lower():
+                matches.append(entry)
+
+        return render(
+            request, "encyclopedia/search_results.html", {"entries": matches},
+        )
+
+
 def random_entry(request):
     entries = util.list_entries()
     random_title = random.choice(entries)
