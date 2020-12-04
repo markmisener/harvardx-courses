@@ -1,0 +1,32 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if message %}
+      {{ message }}
+    {% endif %}
+
+    <h2>{{ user }}'s Watchlist</h2>
+
+    <ul>
+      {% if user.is_authenticated %}
+        <div class="listings-grid">
+          <div class="row">
+            {% for listing in user.watchlist.all %}
+              <div class="column">
+                <a href="{% url 'listing' listing.id %}">
+                  <img src="{{ listing.image_url }}">
+                </a>
+                <div class="desc">{{ listing.title }}</div>
+              </div>
+            {% empty %}
+              No watched listings.
+            {% endfor %}
+          </div>
+        </div>
+      {% else %}
+          <h3>You must be logged in to view this page.</h3>
+          <p>Please login or register for an account.</p>
+        {% endif %}
+    </ul>
+
+{% endblock %}

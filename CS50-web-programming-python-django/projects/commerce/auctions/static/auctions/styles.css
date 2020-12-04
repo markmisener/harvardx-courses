@@ -1,0 +1,78 @@
+body {
+    padding: 10px;
+}
+
+img {
+  height: 256px;
+}
+
+.main {
+  margin: 3%;
+}
+
+.form-wrapper {
+  margin-top: 5%;
+  margin-left: 25%;
+  margin-right: 25%;
+}
+
+.listing-details {
+  margin-top:1%;
+  margin-bottom:1%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.listing-details .listing-description {
+  margin: 1%;
+}
+
+.listing-button {
+  background-color: #4d90fe;
+  border: 1px solid #3079ed;
+  border-radius: 2px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+  height: 30px;
+  min-width: 120px;
+  padding-right: 12px;
+  padding-left: 12px;
+  text-align: center;
+}
+
+.close-listing-button {
+  background-color: red;
+  border: 1px solid red;
+}
+
+.listing-comments {
+  margin:1%;
+}
+
+.column img {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.column img:hover {
+  opacity: 1;
+}
+
+.column .desc {
+  text-align: center;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.listings-grid {
+  margin-top: 5%;
+  margin-left: 5%;
+  margin-bottom: 5%;
+}
