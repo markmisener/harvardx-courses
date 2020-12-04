@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if message %}
+      {{ message }}
+    {% endif %}
+    <h2>Close listing</h2>
+
+    <form action="{% url 'close' listing.id %}" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+
+    <a href="{% url 'listing' listing.id %}">Back to listing.</a>
+{% endblock %}

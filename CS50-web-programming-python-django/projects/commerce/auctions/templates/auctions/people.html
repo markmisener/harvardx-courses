@@ -1,0 +1,60 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+  <div class="main">
+    {% if message %}
+      {{ message }}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+      <h3>{{ person.username }}</h3>
+      <div class="user-details">
+        <ul>
+          <li>Joined: {{ person.date_joined | date:"Y-m-d" }}</li>
+          <li>Last logged in: {{ person.last_login | date:"Y-m-d" }}</li>
+        </ul>
+      </div>
+
+      <div class="listings-grid">
+        <h3>Active Listings:</h3>
+        <div class="row">
+          {% for listing in person.listings.all %}
+            <div class="column">
+              <a href="{% url 'listing' listing.id %}">
+                <img src="{{ listing.image_url }}">
+              </a>
+              <div class="desc">{{ listing.title }}</div>
+            </div>
+          {% empty %}
+            No active listings.
+          {% endfor %}
+        </div>
+      </div>
+
+      <div class="listings-grid">
+        <h3>Watching:</h3>
+        <div class="row">
+          {% for listing in person.watchlist.all %}
+            <div class="column">
+              <a href="{% url 'listing' listing.id %}">
+                <img src="{{ listing.image_url }}">
+              </a>
+              <div class="desc">{{ listing.title }}</div>
+            </div>
+          {% empty %}
+            No watched listings.
+          {% endfor %}
+        </div>
+      </div>
+
+      <a href="{% url 'index' %}">Back to active listings.</a>
+
+    {% else %}
+      <div class="not-logged-in">
+        <h3>You must be logged in to view this page.</h3>
+        <p>Please login or register for an account.</p>
+      </div>
+    {% endif %}
+
+  </div>
+{% endblock %}

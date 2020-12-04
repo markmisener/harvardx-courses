@@ -1,0 +1,16 @@
+{% extends "auctions/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <h2>New Listing</h2>
+
+    <div class="form-wrapper">
+      <form action="{% url 'create-listing' %}" method="post">
+          {% csrf_token %}
+          {{ form|crispy }}
+        <input type="submit">
+      </form>
+    </div>
+
+    <a href="{% url 'index' %}">Back to active listings.</a>
+{% endblock %}

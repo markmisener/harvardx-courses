@@ -1,0 +1,35 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    {% if message %}
+      {{ message }}
+    {% endif %}
+
+    {% if user.is_authenticated %}
+      <div class="listings-grid">
+        <h3>Active Listings:</h3>
+        <div class="row">
+          {% for listing in listings %}
+            {% if listing.active %}
+              <div class="column">
+                <a href="{% url 'listing' listing.id %}">
+                  <img src="{{ listing.image_url }}">
+                </a>
+                <div class="desc">
+                  <a href="{% url 'listing' listing.id %}">{{ listing.title }}: ${{ listing.current_price }}</a>
+                  <br>
+                  {{ listing.short_description }}
+                </div>
+              </div>
+            {% endif %}
+          {% empty %}
+            No active listings.
+          {% endfor %}
+        </div>
+      </div>
+
+    {% else %}
+      <h3>You must be logged in to view this page.</h3>
+      <p>Please login or register for an account.</p>
+    {% endif %}
+{% endblock %}
