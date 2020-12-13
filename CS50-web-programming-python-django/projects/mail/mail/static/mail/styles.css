@@ -1,0 +1,32 @@
+textarea {
+    min-height: 400px;
+}
+
+#emails-card {
+  border-bottom: thin lightgray solid;
+  padding: 1%;
+  cursor: pointer;
+  width: 100%;
+}
+
+#emails-card[data-read="true"] {
+  background: #ebeae8;
+}
+
+#emails-card p {
+  display: inline-block;
+  font-size: 20px;
+  padding-right: 10%;
+}
+
+#email-card #email-header {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 20px;
+  padding-right: 10%;
+}
+
+#email-card #email-body {
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
+}
